@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <title>The Sleepy</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <style>
+            :root{
+                margin: 0;
+                padding: 0;
+                background-color: #F9F2E3;
+            }
+
+            *{
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                text-decoration: none;
+                color: #32302D;
+            }
+
+            .container{
+                margin: 0 60px;
+            }
+
+            /* 로고 */
+            .logo{
+                position: fixed;
+
+                z-index: 30;
+                top: 10px;
+            }
+
+            .logo p{
+                font-size: 24px;
+                margin-top: 30px;
+            }
+
+            .logo svg{
+                position: absolute;
+                top: 22px;
+                left: 72px;
+
+                z-index: -1;
+            }
+
+            /* 메인 */
+            .main{
+                position: absolute;
+                left: 50vw;
+                transform: translate(-50% , 0%);
+
+                z-index: -20;
+                padding: 200px 0;
+
+                display: flex;
+                flex-direction: column;
+
+                gap: 16px;
+
+                width: 65vw;
+            }
+
+            .main-title{
+                font-size: 20px;
+
+                margin: 0;
+            }
+
+            .sub-title{
+                font-size: 12px;
+                opacity: 50%;
+
+                margin: 0;
+            }
+
+            .align-column{
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .column{
+                display: flex;
+                flex-direction: column;
+                gap: 8vw;
+            }
+
+            .align{
+                width: 100%;
+                display: flex;
+
+                gap: 16px;
+            }
+
+            /* 차트1 */
+            .main-chart-01{
+                display: flex;
+
+                gap: 16px;
+            }
+
+            .chart-01 {
+                position: relative;
+                background:#F1E7D2;
+                flex: 1;
+                border-radius: 8px;
+                padding-top: 32px;
+                box-sizing: border-box;
+              
+                text-align: center;
+            }
+
+            .chart-01 svg{
+                margin: 20px 0;
+
+                width: 130px;
+            }
+
+            .time{
+                color: #86C18F;
+                position: absolute;
+                top: 56%;
+                left: 50%;
+                transform: translate(-50% , 0%);
+
+                font-weight: 300;
+                font-size: 18px;
+            }
+
+            /* 차트2 */
+            .main-chart-02{
+                flex: 1;
+                height: 180px;
+                background:#F1E7D2;
+                border-radius: 8px;
+                padding: 32px;
+                box-sizing: border-box;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .chart-02{
+                display: flex;
+            }
+
+            .chart-02-text{
+                margin-left: 20px;
+            }
+
+            .line{
+                display: flex;
+
+                gap: 48px;
+            }
+
+            .line:first-child{
+                margin-bottom: 48px;
+            }
+
+            /* 차트3 */
+            .main-chart-03{
+                flex: 1;
+                background:#F1E7D2;
+                border-radius: 8px;
+
+                height: 450px;
+
+                padding: 32px;
+
+                position: relative;
+
+                overflow: hidden;
+            }
+
+            .center{
+                text-align: center;
+            }
+            
+            .chart-03{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .chart-03 p{
+                text-align: right;
+                width: 30px;
+                padding-right: 20px;
+            }
+
+            .graph-line{
+                height: 1px;
+                border-bottom: dotted 1px rgba(0,0,0, 0.5);
+
+                position: relative;
+            }
+
+            .graph-style{
+                display: flex;
+                flex-direction: column;
+
+                margin-top: 80px;
+            }
+
+            .graph-box{
+                position: absolute;
+                bottom: 45px;
+                left: 82px;
+
+                width: 100%;
+                height: 68%;
+                overflow: hidden;
+            }
+
+            .main-chart-03 svg{
+                height: 100%;
+            }
+
+            /* 차트4 */
+            .main-chart-04{
+                background:#F1E7D2;
+                border-radius: 8px;
+
+                padding: 32px;
+
+                position: relative;
+
+                box-sizing: border-box;
+            }
+
+            .center{
+                text-align: center;
+            }
+            
+            .chart-04{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .chart-04 p{
+                text-align: right;
+                width: 30px;
+                padding-right: 20px;
+            }
+
+            .graph-line{
+                flex: 3;
+                height: 1px;
+                border-bottom: dotted 1px rgba(0,0,0, 0.5);
+            }
+
+            .main-chart-04 svg{
+                position: absolute;
+                bottom: 100px;
+                right: 48px;
+                
+                width: 88%;
+            }
+
+            .week{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 12px;
+                width: 95%;
+                margin-left: 50px;
+
+                margin-left: 32px;
+            }
+
+            .week p{
+                margin: 0 10px;
+            }
+
+            /* 차트5 */
+            .main-chart-05{
+                background:#F1E7D2;
+                border-radius: 8px;
+
+                padding: 32px;
+
+                position: relative;
+
+                box-sizing: border-box;
+            }
+            
+            .chart-05{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .chart-05 p{
+                text-align: right;
+                width: 30px;
+                padding-right: 20px;
+            }
+
+
+            .main-chart-05 svg{
+                position: absolute;
+                bottom: 65px;
+                right: 48px;
+                
+                width: 88%;
+            }
+
+            
+            /* 네비게이션 */
+            .nav{
+                display: flex;
+                flex-direction: column;
+
+                position: fixed;
+                top: 50vh;
+                transform: translate(0 , -50%);
+            }
+
+            .nav a{
+                stroke: #32302D;
+                stroke-width: 2;
+                padding: 27px 0;
+
+                transition: all 0.8s ease-in-out;
+            }
+
+            .nav a:hover{
+                stroke: #86C18F;
+                stroke-width: 3;
+            }
+
+            .nav .here{
+                stroke: #86C18F;
+                stroke-width: 3;
+            }
+
+            .navbar{
+                position: absolute;
+                left: -68px;
+                top: 75%;
+
+                transition: all 1s ease-in-out;
+            }
+
+            .nav a:hover ~ .navbar{
+                opacity: 1;
+            }
+
+            .nav .music:hover ~ .navbar{
+                top: 0%;
+            }
+
+            .nav .book:hover ~ .navbar{
+                top: 25%;
+            }
+
+            .nav .breath:hover ~ .navbar{
+                top: 50%;
+            }
+
+            .nav .chart:hover ~ .navbar{
+                top: 75%;
+            }
+
+            /* 모바일 네비게이션 */
+
+            .mob-nav{
+                display: flex;
+                opacity: 0;
+
+                justify-content: space-around;
+
+                width: 100vw;
+
+                position: fixed;
+                bottom: 40px;
+                left: 50vw;
+                transform: translate(-50%, 0)
+            }
+
+            .mob-nav a{
+                stroke: #32302D;
+                stroke-width: 2;
+
+                transition: all 0.8s ease-in-out;
+            }
+
+            .mob-nav .here{
+                stroke: #86C18F;
+                stroke-width: 3;
+            }
+
+            .mob-nav a:hover{
+                stroke: #86C18F;
+                stroke-width: 3;
+            }
+
+            .mob-navbar{
+                position: absolute;
+                left: 84%;
+                bottom: -65px;
+
+                transform: rotate(-90deg);
+
+                transition: all 1s ease-in-out;
+            }
+
+            .mob-nav a:hover ~ .mob-navbar{
+                opacity: 1;
+            }
+
+            .mob-nav a:hover ~ .mob-navbar{
+                opacity: 1;
+            }
+
+            .mob-nav .mob-music:hover ~ .mob-navbar{
+                left: 10%;
+            }
+
+            .mob-nav .mob-book:hover ~ .mob-navbar{
+                left: 34%;
+            }
+
+            .mob-nav .mob-breath:hover ~ .mob-navbar{
+                left: 59%;
+            }
+
+            .mob-nav .mob-chart:hover ~ .mob-navbar{
+                left: 84%;
+            }
+            
+
+            /* 배경 */
+            .background{
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+                top: 0;
+                left: 0;
+
+                z-index: -100;
+            }
+
+            .leaf1{
+                position: absolute;
+                left: 1313px;
+                top: 296px;
+            }
+
+
+            @import "lesshat";
+
+            /* 타블렛 사이즈 */
+            @media (max-width: 1500px){
+                .align{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    gap: 16px;
+                }
+
+                .main-chart-03{
+                    flex: 1;
+                    height: 20vw;
+                    background:#F1E7D2;
+                    border-radius: 8px;
+
+                    padding: 32px;
+
+                    position: relative;
+                }
+
+                .chart-01 svg{
+                    margin: 20px 0;
+
+                    width: 150px;
+                }
+
+                .main-chart-04 svg{
+                        position: absolute;
+                        right: 40px;
+                        
+                        width: 85%;
+                    }
+
+                    .main-chart-05 svg{
+                        position: absolute;
+                        right: 40px;
+                        
+                        width: 85%;
+                    }
+            }
+
+            @media (max-width: 1300px){
+                .main-chart-04 svg{
+                    width: 83%;
+                }
+
+                .main-chart-05 svg{
+                    width: 83%;
+                }
+            }
+
+            @media (max-width: 1100px){
+                .main-chart-04 svg{
+                    width: 80%;
+                }
+
+                .main-chart-05 svg{
+                    width: 80%;
+                }
+            }
+
+            @media (max-width: 780px){
+                .chart-01 svg{
+                    margin: 20px 0;
+
+                    width: 100px;
+                }
+
+                .main-title{
+                    font-size: 14px;
+                }
+
+                .sub-title{
+                    font-size: 12px;
+                    opacity: 50%;
+
+                    margin: 0;
+                }
+
+                .time{
+                    font-size: 16px;
+                }
+
+                .main-chart-04 svg{
+                    width: 75%;
+                }
+
+                .main-chart-05 svg{
+                    width: 75%;
+                }
+            }
+
+            @media (max-width: 750px){
+                .main{
+                    width: 80vw;
+                    padding: 100px 0;
+                }
+
+                .chart-01 svg{
+                    margin: 20px 0;
+
+                    width: 120px;
+                }
+
+                .main-chart-04 svg{
+                    width: 78%;
+                }
+
+                .main-chart-05 svg{
+                    width: 78%;
+                }
+            }
+
+            /* 모바일 사이즈 */
+            @media (max-width: 626px){
+                .chart-03 .sub-title{
+                        display: none;
+                    }
+
+                    .chart-04 .sub-title{
+                        display: none;
+                    }
+
+                    .chart-05 .sub-title{
+                        display: none;
+                    }
+
+                    .main p{
+                    text-align: center;
+                }
+
+                .main h1{
+                    text-align: center;
+                    width: 100%;
+                }
+
+                .main-title{
+                    font-size: 14px;
+                }
+
+                .sub-title{
+                    font-size: 8px;
+                }
+
+                .chart-01 svg{
+                    width: 100px;
+                }
+
+                .time{
+                    font-size: 12px;
+                    top: 58%;
+                }
+
+                .chart-02-text{
+                    margin-left: 10px;
+                }
+
+                .chart-02 svg{
+                    width: 20px;
+                }
+
+                .line:first-child{
+                    margin-bottom: 24px;
+                }
+
+                .line{
+                    display: flex;
+
+                    gap: 30px;
+                }
+
+                .main-chart-04 svg{
+                    width: 73%;
+                }
+
+                .main-chart-05 svg{
+                    width: 73%;
+                }
+
+                .container{
+                    margin: 0 20px;
+                }
+
+                .logo p{
+                    margin-top: 10px;
+                    width: 50px;
+                    font-size: 22px
+                }
+
+                .logo svg{
+                    position: absolute;
+                    top: 34px;
+                    left: 30px;
+
+                    width: 40px;
+
+                    z-index: -1;
+                }
+
+                .main p{
+                    text-align: center;
+                }
+
+                .nav{
+                    display: none;
+                }
+
+                .mob-nav{
+                    opacity: 1;
+                }
+
+                .h1{
+                    font-size: 12px;
+
+                    margin: 0;
+                }
+
+                .p{
+                    font-size: 8px;
+                    opacity: 50%;
+
+                    margin: 0;
+                }
+
+                .graph-box{
+                        position: absolute;
+                        bottom: 32px;
+                        left: 32px;
+
+                        width: 100%;
+                        height: 68%;
+                        overflow: hidden;
+                    }
+                    .week{
+                        width: 100%;
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+
+                    .graph-style{
+                        margin-top: 32px;
+                    }
+
+                    .main-chart-04 svg{
+                        position: absolute;
+                        bottom: 70px;
+                        right: 32px;
+                        
+                        width: 85%;
+                    }
+
+                    .main-chart-05 svg{
+                        position: absolute;
+                        bottom: 58px;
+                        right: 32px;
+                        
+                        width: 85%;
+                    }
+            }
+                
+
+                @media (max-width: 460px){
+                    .chart-01{
+                        padding-top: 24px;
+                    }
+
+                    .chart-01 svg{
+                        width: 70px;
+
+                        margin: 12px 0;
+                    }
+
+                    .chart-02-text{
+                        width: 60px;
+                    }
+
+                    .chart-02 svg{
+                        display: none;
+                    }
+
+                    .graph-box{
+                        position: absolute;
+                        bottom: 24px;
+                        left: 24px;
+
+                        width: 100%;
+                        height: 68%;
+                        overflow: hidden;
+                    }
+
+                    .main-chart-03{
+                        padding: 24px;
+                    }
+
+                    .main-chart-04{
+                        padding: 24px;
+                    }
+
+                    .main-chart-04 svg{
+                        position: absolute;
+                        bottom: 70px;
+                        right: 24px;
+                        
+                        width: 85%;
+                    }
+
+                    .main-chart-05{
+                        padding: 24px;
+                    }
+
+                    .main-chart-05 svg{
+                        position: absolute;
+                        bottom: 50px;
+                        right: 24px;
+                        
+                        width: 85%;
+                    }
+                }
+            
+        </style>
+    </head>
+    <body>
+        <section class="container">
+            <!-- 로고 -->
+            <a href="main.html" class="logo">
+                <p>The Sleepy</p>
+                <svg width="50" viewBox="0 0 54 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.01357 16.6325C1.37786 3.07128 23.1984 10.904 40.6197 2.70162C54.1589 -3.67288 57.3446 35.2763 40.6197 43.239C25.1676 50.5956 2.80822 33.584 2.01357 16.6325Z" stroke="#86C18F" stroke-width="3"/>
+                </svg>                
+            </a>
+
+                                                          
+
+             <!-- 메인 -->
+            <div class="main">
+            <div class="align">
+                <div class="align-column">
+                    <div  class="main-chart-01">
+                        <div class="chart-01">
+                            <h1 class="main-title center"> Bed time </h1>
+
+                            <svg viewBox="0 0 136 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="68" cy="67.6523" r="65" stroke="black" stroke-opacity="0.6" stroke-width="0.5"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4792 17.5888C8.88272 29.9581 0.3479 47.794 0.3479 67.6233C0.3479 104.971 30.6239 135.247 67.9712 135.247C105.319 135.247 135.595 104.971 135.595 67.6233C135.595 30.276 105.319 0 67.9712 0C67.665 0 67.3592 0.00203596 67.0539 0.00609509V5.00658C67.3591 5.0022 67.6649 5 67.9712 5C102.557 5 130.595 33.0374 130.595 67.6233C130.595 102.209 102.557 130.247 67.9712 130.247C33.3853 130.247 5.3479 102.209 5.3479 67.6233C5.3479 49.3261 13.1951 32.8616 25.7075 21.4117L22.4792 17.5888Z" fill="#86C18F"/>
+                                <circle cx="26" cy="18" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                                <circle cx="26" cy="18" r="5" fill="#86C18F"/>
+                            </svg> 
+
+                            <div class="time">23:30</div>
+
+                        </div>
+
+                        <div class="chart-01">
+                            <h1 class="main-title center"> Sleeping </h1>
+
+                            <svg viewBox="0 0 135 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="66.5" cy="67.6523" rx="65.5" ry="65" stroke="black" stroke-opacity="0.6" stroke-width="0.5"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M64.7459 5.02636C65.3553 5.00883 65.9669 5 66.5805 5C101.166 5 129.204 33.0374 129.204 67.6233C129.204 102.209 101.166 130.247 66.5805 130.247C50.2989 130.247 35.4685 124.033 24.3312 113.848L20.9651 117.545C32.9908 128.54 49.0024 135.247 66.5805 135.247C103.928 135.247 134.204 104.971 134.204 67.6233C134.204 30.276 103.928 0 66.5805 0C65.967 0 65.3555 0.00816874 64.7459 0.0244034V5.02636Z" fill="#86C18F"/>
+                                <circle cx="23" cy="116" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                                <circle cx="23" cy="116" r="5" fill="#86C18F"/>
+                            </svg>                                
+  
+                            <div class="time">8h 30m</div>
+                                                 
+                        </div>
+
+                        <div class="chart-01">
+                            <h1 class="main-title center"> Wake time </h1>
+
+                            <svg viewBox="0 0 135 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="66.5" cy="68.1523" r="65.5" stroke="black" stroke-opacity="0.6" stroke-width="0.5"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M63.8308 5.59188C64.715 5.55484 65.604 5.53613 66.4973 5.53613C101.083 5.53613 129.121 33.5735 129.121 68.1595C129.121 102.745 101.083 130.783 66.4973 130.783C54.8125 130.783 43.8752 127.583 34.514 122.011L32.0487 126.363C42.1378 132.347 53.9163 135.783 66.4973 135.783C103.845 135.783 134.121 105.507 134.121 68.1595C134.121 30.8121 103.845 0.536133 66.4973 0.536133C65.6043 0.536133 64.7154 0.553442 63.8308 0.587742V5.59188Z" fill="#86C18F"/>
+                                <circle cx="34" cy="124" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                                <circle cx="34" cy="124" r="5" fill="#86C18F"/>
+                            </svg>
+
+                            <div class="time">7:30</div>
+                                
+                        </div>
+                    </div>
+
+                    <div  class="main-chart-02">
+                        <div class="align-column">
+                            <div class="line">
+                                <div class="chart-02">
+                                    <svg width="27" height="29" viewBox="0 0 27 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.9614 0.00909402C6.64148 -0.280295 0 6.37565 0 14.4496C0 22.4367 6.48232 28.9191 14.4695 28.9191C19.8376 28.9191 24.4968 25.9962 27 21.6554C16.1334 21.2937 9.50643 9.45765 14.9614 0.00909402Z" fill="#86C18F"/>
+                                    </svg>
+
+                                    <div class="chart-02-text">
+                                        <h1 class="main-title">1:00 AM</h1>
+                                        <p class="sub-title">Went to bed</p> 
+                                    </div>
+                                </div>
+
+                                <div class="chart-02">
+                                    <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.4999 2.53613C6.45779 2.53613 0.824341 8.16958 0.824341 15.2117C0.824341 22.2538 6.45779 27.8873 13.4999 27.8873C20.5416 27.8873 26.1755 22.2538 26.1755 15.2117C26.1755 8.16958 20.5416 2.53613 13.4999 2.53613ZM13.4995 25.0703C8.00695 25.0703 3.64085 20.7042 3.64085 15.2117C3.64085 9.77974 8.06837 5.35265 13.5003 5.35307C18.9929 5.35349 23.3581 9.71917 23.3581 15.2117C23.3586 20.6433 18.9315 25.0703 13.4995 25.0703Z" fill="#86C18F"/>
+                                        <path d="M26.5063 4.0168L22.1599 0.331699C21.5757 -0.163799 20.7016 -0.0964985 20.1998 0.482283C19.6905 1.0699 19.759 1.96078 20.3521 2.46385L24.6984 6.14854C25.2827 6.64403 26.1567 6.57673 26.6585 5.99795C27.1679 5.41034 27.0993 4.51987 26.5063 4.0168Z" fill="#86C18F"/>
+                                        <path d="M0.342651 5.99991C0.844458 6.57869 1.71852 6.64599 2.30277 6.15049L6.6491 2.46581C7.2426 1.96274 7.31074 1.07227 6.80137 0.484236C6.29956 -0.0945454 5.4255 -0.161846 4.84125 0.333652L0.494917 4.01834C-0.0981658 4.52141 -0.166728 5.41187 0.342651 5.99991Z" fill="#86C18F"/>
+                                        <path d="M13.1956 8.16943H13.1001C12.5432 8.16943 12.0914 8.62077 12.0914 9.1781V16.6198L17.8822 20.1926C18.3444 20.4778 18.9493 20.3457 19.2509 19.894C19.5702 19.4149 19.4246 18.7658 18.9308 18.4697L14.2042 15.6339V9.1781C14.2042 8.62119 13.7529 8.16943 13.1956 8.16943Z" fill="#86C18F"/>
+                                    </svg>
+                                        
+                                    <div class="chart-02-text">
+                                        <h1 class="main-title">8:00 AM</h1>
+                                        <p class="sub-title">Woke up</p> 
+                                    </div>
+                                </div>
+
+                                <div class="chart-02">
+                                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.3333 25V10.625" stroke="#86C18F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9.66675 25V2" stroke="#86C18F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 25V16.375" stroke="#86C18F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M25 25V16.375" stroke="#86C18F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                        
+                                    <div class="chart-02-text">
+                                        <h1 class="main-title">30%</h1>
+                                        <p class="sub-title">Regularity</p> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="line">
+                                <div class="chart-02">
+                                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.5299 0C6.06949 0 0 6.04267 0 13.4701C0 17.0681 1.41178 20.4613 3.97523 23.0248C6.53867 25.5882 9.93193 27 13.5299 27C20.9573 27 27 20.9305 27 13.4701C27 9.87206 25.5989 6.48946 23.0547 3.94529C20.5105 1.40113 17.1279 0 13.5299 0ZM13.5299 25.204C7.05981 25.204 1.79601 19.9402 1.79601 13.4701C1.79601 7.03299 7.05981 1.79601 13.5299 1.79601C19.967 1.79601 25.204 7.03299 25.204 13.4701C25.204 19.9402 19.967 25.204 13.5299 25.204Z" fill="#86C18F"/>
+                                        <path d="M9.03992 17.0623C9.03992 14.5865 11.0541 12.5723 13.53 12.5723C16.0058 12.5723 18.02 14.5865 18.02 17.0623" stroke="#86C18F" stroke-width="1.8" stroke-linecap="round"/>
+                                        <path d="M16.2234 8.98056C16.2954 8.98056 16.3687 8.97182 16.4418 8.95356L20.0338 8.05555C20.515 7.93528 20.8075 7.44772 20.6872 6.96656C20.5669 6.48541 20.0794 6.19284 19.5982 6.31317L16.0062 7.21118C15.5251 7.33145 15.2326 7.81901 15.3528 8.30017C15.4548 8.70822 15.8209 8.98056 16.2234 8.98056Z" fill="#86C18F"/>
+                                        <path d="M7.02611 8.05553L10.6181 8.95354C10.6913 8.9718 10.7645 8.98054 10.8366 8.98054C11.239 8.98054 11.6051 8.70814 11.7071 8.30015C11.8274 7.81899 11.5349 7.33143 11.0537 7.21116L7.46171 6.31315C6.9805 6.19288 6.493 6.48539 6.37272 6.96654C6.25245 7.4477 6.54496 7.93526 7.02611 8.05553Z" fill="#86C18F"/>
+                                    </svg>
+
+                                    <div class="chart-02-text">
+                                        <h1 class="main-title">3 Time</h1>
+                                        <p class="sub-title">wake</p> 
+                                    </div>
+                                </div>
+
+                                <div class="chart-02">
+                                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.94953 23.0525C6.58206 25.6853 10.0407 27.0017 13.4993 27.0014C16.9579 27.0012 20.4166 25.6845 23.0501 23.0512C28.3162 17.7857 28.3157 9.21749 23.0506 3.95216C20.4168 1.31886 16.9579 0.00195312 13.4993 0.00195312C10.0404 0.00195312 6.58181 1.31809 3.94902 3.95114C-1.31733 9.21698 -1.31682 17.7857 3.94953 23.0525ZM5.42223 5.4241C7.64923 3.19735 10.5743 2.0841 13.4993 2.0841C16.4244 2.0841 19.3494 3.19761 21.5767 5.42487C26.0302 9.87836 26.0296 17.1255 21.5761 21.5788C19.3494 23.8053 16.4244 24.9188 13.4991 24.919C10.5738 24.9193 7.64898 23.806 5.42198 21.5793C4.86497 21.0225 4.37797 20.422 3.96047 19.7891C1.03772 15.3568 1.52523 9.3211 5.42223 5.4241ZM10.3459 20.5081H16.6537C16.9699 20.5081 17.227 20.9044 17.227 21.3937C17.227 21.8825 16.9699 22.2791 16.6537 22.2791H10.3459C10.0292 22.2791 9.77237 21.8825 9.77237 21.3937C9.77237 20.9042 10.0292 20.5081 10.3459 20.5081ZM6.28447 13.3194C5.97593 13.0307 5.96014 12.5468 6.24832 12.2383C6.5365 11.9295 7.01662 11.9096 7.32949 12.2018C8.15711 12.9788 9.00687 12.2632 9.10106 12.1792C9.38237 11.9272 9.79885 11.9218 10.0855 12.1489C10.1194 12.1756 10.1514 12.2059 10.1812 12.239C10.4628 12.5537 10.436 13.0374 10.1214 13.3194C9.44321 13.9263 7.77728 14.7152 6.28447 13.3194ZM16.8505 13.3105C16.542 13.0218 16.5264 12.5379 16.8144 12.2293C17.1025 11.9205 17.5827 11.9007 17.8955 12.1929C18.7232 12.9699 19.5729 12.2543 19.6671 12.1703C19.9482 11.9183 20.3649 11.9129 20.6515 12.14C20.6854 12.1667 20.7175 12.197 20.7473 12.2301C21.0286 12.5448 21.0021 13.0284 20.6874 13.3105C20.0095 13.9174 18.3436 14.7063 16.8505 13.3105Z" fill="#86C18F"/>
+                                    </svg>
+                                        
+                                    <div class="chart-02-text">
+                                        <h1 class="main-title">12 min</h1>
+                                        <p class="sub-title">Asleep after</p> 
+                                    </div>
+                                </div>
+
+                                <div class="chart-02">
+                                    <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.0811 14.0707L18.8185 14.4604H19.2884H24.4944C25.5815 14.4604 26.4486 15.3108 26.4486 16.3421C26.4486 17.3734 25.5817 18.2237 24.4946 18.2237H15.2217C14.5005 18.2237 13.8416 17.8417 13.502 17.2355L13.502 17.2355C13.1629 16.6305 13.1934 15.8953 13.5823 15.3181L13.5823 15.3181L20.9363 4.40281L21.1989 4.01312H20.729H14.9934C13.9063 4.01312 13.0393 3.16286 13.0393 2.13156C13.0393 1.10026 13.9063 0.25 14.9934 0.25H24.7958C25.5169 0.25 26.1757 0.631958 26.5154 1.23802L26.5154 1.23803C26.8545 1.84309 26.824 2.5782 26.435 3.1554L26.435 3.15542L19.0811 14.0707Z" fill="#86C18F" stroke="#F1E7D2" stroke-width="0.5"/>
+                                        <path d="M5.24947 12.93L5.51488 12.5395H5.0427H2.22335C1.1235 12.5395 0.25 11.6872 0.25 10.6579C0.25 9.62864 1.1235 8.77637 2.22335 8.77637H9.14507C9.87427 8.77637 10.5395 9.15928 10.8822 9.76534C11.2239 10.3697 11.1932 11.104 10.8012 11.6811C10.8012 11.6811 10.8012 11.6811 10.8012 11.6811L6.28022 18.3333L6.01481 18.7238H6.48699H8.93237C10.0322 18.7238 10.9057 19.576 10.9057 20.6053C10.9057 21.6346 10.0322 22.4869 8.93237 22.4869H2.38462C1.65525 22.4869 0.989999 22.104 0.64749 21.4979L0.64747 21.4979C0.305664 20.8934 0.336342 20.1591 0.728498 19.5822L0.728512 19.5822L5.24947 12.93Z" fill="#86C18F" stroke="#F1E7D2" stroke-width="0.5"/>
+                                    </svg>
+                                        
+                                    <div class="chart-02-text">
+                                        <h1 class="main-title">30 min</h1>
+                                        <p class="sub-title">Snore</p> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="main-chart-03">
+                    <h1 class="main-title center"> Sleep Pattern </h1>
+
+                    <div class="graph-style">
+                        <div class="column">
+                            <div class="chart-03">
+                                <p class="sub-title">Awake</p>
+                                <div class="graph-line"></div>
+                            </div>
+        
+                            <div class="chart-03">
+                                <p class="sub-title">Sleep</p>
+                                <div class="graph-line"></div>
+                            </div>
+        
+                            <div class="chart-03">
+                                <p class="sub-title">Deep<br>Sleep</p>
+                                <div class="graph-line"></div>
+                            </div>
+
+                            <div class="graph-box">
+                                <svg viewBox="0 0 1379 328" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 323H16.5613C28.1592 323 37.5613 313.598 37.5613 302V23.336C37.5613 13.7616 45.3228 6 54.8972 6V6C64.4716 6 72.2332 13.7616 72.2332 23.336V160.233C72.2332 168.887 79.2489 175.903 87.9032 175.903V175.903C96.5574 175.903 103.573 168.887 103.573 160.233V100.183C103.573 91.6207 110.514 84.6799 119.076 84.6799V84.6799C127.638 84.6799 134.579 91.6208 134.579 100.183V220.333C134.579 227.913 140.724 234.058 148.303 234.058V234.058C155.883 234.058 162.028 227.913 162.028 220.333V214.105C162.028 208.121 166.879 203.27 172.863 203.27V203.27C178.847 203.27 183.698 198.419 183.698 192.435V129.306C183.698 122.923 188.872 117.748 195.255 117.748V117.748C201.638 117.748 206.812 122.923 206.812 129.306V212.962V294.452C206.812 302.032 212.957 308.176 220.537 308.176V308.176C228.116 308.176 234.261 302.032 234.261 294.452V221.973C234.261 214.792 240.082 208.971 247.263 208.971V208.971C254.444 208.971 260.265 214.792 260.265 221.973V307.109C260.265 315.885 267.38 323 276.156 323V323C284.933 323 292.047 315.885 292.047 307.109V189.627C292.047 182.047 298.192 175.903 305.772 175.903V175.903C313.351 175.903 319.496 182.047 319.496 189.627V266.781C319.496 275.158 326.287 281.95 334.665 281.95V281.95C343.043 281.95 349.834 275.158 349.834 266.781V124.631C349.834 117.051 355.979 110.906 363.558 110.906V110.906C371.138 110.906 377.283 117.051 377.283 124.631V289.396C377.283 299.768 385.691 308.176 396.063 308.176V308.176C406.435 308.176 414.844 299.768 414.844 289.396V42.1121C414.844 34.1335 421.312 27.6655 429.291 27.6655V27.6655C437.269 27.6655 443.737 34.1335 443.737 42.1121V201.366C443.737 209.345 450.205 215.813 458.184 215.813V215.813C466.162 215.813 472.63 209.345 472.63 201.366V154.583C472.63 146.205 479.422 139.414 487.799 139.414V139.414C496.177 139.414 502.968 146.205 502.968 154.583V258.267C502.968 265.049 508.466 270.547 515.248 270.547V270.547C522.03 270.547 527.528 265.049 527.528 258.267V198.027C527.528 190.846 533.349 185.025 540.53 185.025V185.025C547.71 185.025 553.532 190.846 553.532 198.027V283.885C553.532 292.263 560.323 299.054 568.701 299.054V299.054C577.078 299.054 583.87 292.263 583.87 283.885V177.388C583.87 169.011 590.661 162.219 599.039 162.219V162.219C607.416 162.219 614.208 169.011 614.208 177.388V306.386C614.208 315.562 621.646 323 630.821 323V323C639.997 323 647.435 315.562 647.435 306.386V248.504C647.435 240.526 653.903 234.058 661.881 234.058V234.058C669.86 234.058 676.328 227.59 676.328 219.611V154C676.328 145.944 682.858 139.414 690.914 139.414V139.414C698.97 139.414 705.5 145.944 705.5 154V273.125C705.5 281.34 712.16 288 720.375 288V288C728.59 288 735.25 281.34 735.25 273.125V61.375C735.25 52.8836 742.134 46 750.625 46V46C759.116 46 766 52.8836 766 61.375V111.385C766 118.703 771.932 124.635 779.25 124.635V124.635C786.568 124.635 792.5 118.703 792.5 111.385V15.75C792.5 7.60381 799.104 1 807.25 1V1C815.396 1 822 7.6038 822 15.75V159.903C822 168.739 829.163 175.903 838 175.903V175.903C846.837 175.903 854 183.066 854 191.903V287.951C854 296.236 860.716 302.951 869 302.951V302.951C877.284 302.951 884 296.236 884 287.951V82C884 73.7157 890.716 67 899 67V67C907.284 67 914 73.7157 914 82V131.5C914 140.613 921.387 148 930.5 148V148C939.613 148 947 140.613 947 131.5V38C947 29.1634 954.163 22 963 22V22C971.837 22 979 29.1634 979 38V242.5C979 251.06 985.94 258 994.5 258V258C1003.06 258 1010 251.06 1010 242.5V204.817C1010 197.362 1016.04 191.317 1023.5 191.317V191.317C1030.96 191.317 1037 185.273 1037 177.817V97.6587C1037 89.0983 1043.94 82.1587 1052.5 82.1587V82.1587C1061.06 82.1587 1068 89.0983 1068 97.6587V247C1068 256.389 1075.61 264 1085 264V264C1094.39 264 1102 256.389 1102 247V28.4282C1102 20.1836 1108.68 13.5 1116.93 13.5V13.5C1125.23 13.5 1131.94 20.271 1131.86 28.5711L1129.17 308.915C1129.08 318.875 1137.13 327 1147.09 327V327C1156.98 327 1165 318.98 1165 309.086V203.004C1165 193.83 1172.33 186.336 1181.5 186.131V186.131C1190.67 185.926 1198 178.432 1198 169.258V144.131C1198 134.328 1205.95 126.381 1215.75 126.381V126.381C1225.55 126.381 1233.5 134.328 1233.5 144.131V229.875C1233.5 239.333 1241.17 247 1250.62 247V247C1260.08 247 1267.75 239.333 1267.75 229.875V62.5625C1267.75 53.4153 1275.17 46 1284.31 46V46C1293.46 46 1300.88 53.4153 1300.88 62.5625V151.527C1300.88 163.125 1310.28 172.527 1321.87 172.527H1379" stroke="url(#paint0_linear)" stroke-width="2"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear" x1="345.501" y1="6.00028" x2="345.501" y2="323.002" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#86C18F"/>
+                                    <stop offset="1" stop-color="#86C18F" stop-opacity="0.2"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div  class="main-chart-04">
+                    <h1 class="main-title center"> Sleep Pattern </h1>
+
+                    <div class="graph-style">
+                    <div class="column">
+                        <div class="chart-04">
+                            <p class="sub-title">100%</p>
+                            <div class="graph-line"></div>
+                        </div>
+    
+                        <div class="chart-04">
+                            <p class="sub-title">80%</p>
+                            <div class="graph-line"></div>
+                        </div>
+    
+                        <div class="chart-04">
+                            <p class="sub-title">60%</p>
+                            <div class="graph-line"></div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <svg viewBox="0 0 1105 278" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 268L190.833 129.506L370.78 88.1818L552.5 179.766H733.333L914.167 56.9091L1095 10" stroke="#86C18F" stroke-width="2"/>
+                        <circle cx="10" cy="268" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="191" cy="129" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="371" cy="89" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="552" cy="179" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="735" cy="179" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="915" cy="57" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="1095" cy="10" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="10" cy="268" r="5" fill="#86C18F"/>
+                        <circle cx="191" cy="129" r="5" fill="#86C18F"/>
+                        <circle cx="371" cy="89" r="5" fill="#86C18F"/>
+                        <circle cx="552" cy="179" r="5" fill="#86C18F"/>
+                        <circle cx="735" cy="179" r="5" fill="#86C18F"/>
+                        <circle cx="915" cy="57" r="5" fill="#86C18F"/>
+                        <circle cx="1095" cy="10" r="5" fill="#86C18F"/>
+                    </svg>
+                                               
+                    <div class="week">
+                        <p class="sub-title">SUN</p>
+                        <p class="sub-title">MON</p>
+                        <p class="sub-title">TUE</p>
+                        <p class="sub-title">WED</p>
+                        <p class="sub-title">THU</p>
+                        <p class="sub-title">FRI</p>
+                        <p class="sub-title">SAT</p>
+                    </div>     
+                </div>
+
+
+                <div  class="main-chart-05">
+                    <h1 class="main-title center"> Sleep Pattern </h1>
+
+                    <div class="graph-style">
+                    <div class="column">
+                        <div class="chart-05">
+                            <p class="sub-title">100%</p>
+                            <div class="graph-line"></div>
+                        </div>
+    
+                        <div class="chart-05">
+                            <p class="sub-title">80%</p>
+                            <div class="graph-line"></div>
+                        </div>
+    
+                        <div class="chart-05">
+                            <p class="sub-title">60%</p>
+                            <div class="graph-line"></div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <svg viewBox="0 0 1086 291" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="196" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="10" cy="196" r="5" fill="#86C18F"/>
+                        <circle cx="189" cy="227" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="189" cy="227" r="5" fill="#86C18F"/>
+                        <circle cx="368" cy="222" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="368" cy="222" r="5" fill="#86C18F"/>
+                        <circle cx="545" cy="271" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="545" cy="271" r="5" fill="#86C18F"/>
+                        <circle cx="722" cy="130" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="722" cy="130" r="5" fill="#86C18F"/>
+                        <circle cx="899" cy="196" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="899" cy="196" r="5" fill="#86C18F"/>
+                        <circle cx="1076" cy="10" r="10" fill="#86C18F" fill-opacity="0.3"/>
+                        <circle cx="1076" cy="10" r="5" fill="#86C18F"/>
+                        <line x1="10" y1="196.116" x2="10" y2="291" stroke="#86C18F" stroke-width="2"/>
+                        <line x1="188.813" y1="222.163" x2="188.813" y2="291" stroke="#86C18F" stroke-width="2"/>
+                        <line x1="367.626" y1="222.163" x2="367.626" y2="291" stroke="#86C18F" stroke-width="2"/>
+                        <line x1="544.719" y1="270.535" x2="544.719" y2="291" stroke="#86C18F" stroke-width="2"/>
+                        <line x1="721.813" y1="130.07" x2="721.813" y2="291" stroke="#86C18F" stroke-width="2"/>
+                        <line x1="898.906" y1="196.116" x2="898.906" y2="291" stroke="#86C18F" stroke-width="2"/>
+                        <line x1="1076" y1="11" x2="1076" y2="291" stroke="#86C18F" stroke-width="2"/>
+                    </svg>     
+                                               
+                    <div class="week">
+                        <p class="sub-title">SUN</p>
+                        <p class="sub-title">MON</p>
+                        <p class="sub-title">TUE</p>
+                        <p class="sub-title">WED</p>
+                        <p class="sub-title">THU</p>
+                        <p class="sub-title">FRI</p>
+                        <p class="sub-title">SAT</p>
+                    </div>     
+                </div>
+                    
+            </div>
+
+            <!-- 네비게이션 -->
+            <div class="nav">
+                <a href="music-list.html" class="music">
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.33301 21.8333V3.77778L25.9997 1V19.0556" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.16667 26.0003C7.46785 26.0003 9.33333 24.1348 9.33333 21.8337C9.33333 19.5325 7.46785 17.667 5.16667 17.667C2.86548 17.667 1 19.5325 1 21.8337C1 24.1348 2.86548 26.0003 5.16667 26.0003Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21.8337 23.2225C24.1348 23.2225 26.0003 21.357 26.0003 19.0558C26.0003 16.7546 24.1348 14.8892 21.8337 14.8892C19.5325 14.8892 17.667 16.7546 17.667 19.0558C17.667 21.357 19.5325 23.2225 21.8337 23.2225Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                    
+                </a>
+
+                <a href="book-list.html" class="book">
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 22.875C1 22.0462 1.41155 21.2513 2.14411 20.6653C2.87668 20.0792 3.87025 19.75 4.90625 19.75H26" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.90625 1H26V26H4.90625C3.87025 26 2.87668 25.6708 2.14411 25.0847C1.41155 24.4987 1 23.7038 1 22.875V4.125C1 3.2962 1.41155 2.50134 2.14411 1.91529C2.87668 1.32924 3.87025 1 4.90625 1V1Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </a>
+
+                <a href="breathing-mode.html" class="breath">
+                    <svg  width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5 1V6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.5 21V26" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.66309 4.6626L8.20059 8.2001" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.7998 18.8003L22.3373 22.3378" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 13.5H6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 13.5H26" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.66309 22.3378L8.20059 18.8003" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.7998 8.2001L22.3373 4.6626" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </a>
+
+                <a href="chart.html" class="chart here">
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="11" y="26" width="18.75" height="5" rx="1" transform="rotate(-90 11 26)"/>
+                        <rect x="1" y="26" width="25" height="4.62963" rx="1" transform="rotate(-90 1 26)"/>
+                        <rect x="21" y="26" width="12.5" height="5" rx="1" transform="rotate(-90 21 26)"/>
+                    </svg>                         
+                </a>
+
+
+                <!-- 네비게이션 바 -->
+                <svg class="navbar" width="25" height="73" viewBox="0 0 25 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                    <path d="M7.7 61.6314C18.475 54.8637 25 46.0898 25 36.5C25 26.9102 18.475 18.1363 7.7 11.3686C2.65 8.21216 3.63288e-06 4.15958 3.8147e-06 -1.09278e-06L6.23766e-07 73C8.05002e-07 68.8538 2.65 64.8012 7.7 61.6314Z" fill="#86C18F"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0">
+                    <rect width="73" height="25" fill="white" transform="translate(25) rotate(90)"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+            </div> 
+            
+            <!-- 모바일 네비게이션 -->
+            <div class="mob-nav">
+                <a href="music-list.html" class="mob-music">
+                    <svg width="23" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.33301 21.8333V3.77778L25.9997 1V19.0556" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.16667 26.0003C7.46785 26.0003 9.33333 24.1348 9.33333 21.8337C9.33333 19.5325 7.46785 17.667 5.16667 17.667C2.86548 17.667 1 19.5325 1 21.8337C1 24.1348 2.86548 26.0003 5.16667 26.0003Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21.8337 23.2225C24.1348 23.2225 26.0003 21.357 26.0003 19.0558C26.0003 16.7546 24.1348 14.8892 21.8337 14.8892C19.5325 14.8892 17.667 16.7546 17.667 19.0558C17.667 21.357 19.5325 23.2225 21.8337 23.2225Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                    
+                </a>
+
+                <a href="book-list.html" class="mob-book">
+                    <svg width="23" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 22.875C1 22.0462 1.41155 21.2513 2.14411 20.6653C2.87668 20.0792 3.87025 19.75 4.90625 19.75H26" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.90625 1H26V26H4.90625C3.87025 26 2.87668 25.6708 2.14411 25.0847C1.41155 24.4987 1 23.7038 1 22.875V4.125C1 3.2962 1.41155 2.50134 2.14411 1.91529C2.87668 1.32924 3.87025 1 4.90625 1V1Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </a>
+
+                <a href="breathing-mode.html" class="mob-breath">
+                    <svg  width="23" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5 1V6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.5 21V26" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.66309 4.6626L8.20059 8.2001" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.7998 18.8003L22.3373 22.3378" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1 13.5H6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 13.5H26" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.66309 22.3378L8.20059 18.8003" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.7998 8.2001L22.3373 4.6626" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </a>
+
+                <a href="chart.html" class="mob-chart">
+                    <svg width="23" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="11" y="26" width="18.75" height="5" rx="1" transform="rotate(-90 11 26)"/>
+                        <rect x="1" y="26" width="25" height="4.62963" rx="1" transform="rotate(-90 1 26)"/>
+                        <rect x="21" y="26" width="12.5" height="5" rx="1" transform="rotate(-90 21 26)"/>
+                    </svg>                        
+                </a>
+
+
+                <!-- 네비게이션 바 -->
+                <svg class="mob-navbar" width="25" height="73" viewBox="0 0 25 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                    <path d="M7.7 61.6314C18.475 54.8637 25 46.0898 25 36.5C25 26.9102 18.475 18.1363 7.7 11.3686C2.65 8.21216 3.63288e-06 4.15958 3.8147e-06 -1.09278e-06L6.23766e-07 73C8.05002e-07 68.8538 2.65 64.8012 7.7 61.6314Z" fill="#86C18F"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0">
+                    <rect width="73" height="25" fill="white" transform="translate(25) rotate(90)"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 배경 -->
+        <section class="background">
+            <svg class="leaf1" width="907" height="873" viewBox="0 0 907 873" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M102.045 323.765C91.0693 312.143 79.0555 301.552 64.7883 293.74C69.7981 301.377 74.9512 308.84 79.4203 316.746C92.3467 339.615 101.946 364.147 114.73 387.085C123.705 403.191 134.571 417.689 151.825 425.604C159.125 428.952 164.077 434.03 168.064 440.556C167.808 440.871 167.562 441.192 167.32 441.515C143.445 430.255 118.892 432.332 94.2361 437.997C76.5359 442.063 58.8515 446.24 41.2932 450.859C33.7107 452.853 25.752 452.965 17.7097 455.496C20.852 458.273 24.0664 458.887 27.1844 459.672C55.0311 466.676 82.9513 465.808 110.91 460.404C129.346 456.841 147.603 452.228 166.445 451.001C170.813 450.716 174.999 450.842 178.812 453.281C183.803 459.632 188.794 465.981 193.785 472.332C193.549 472.607 193.328 472.896 193.123 473.19C177.441 469.965 161.742 467.955 145.859 472.01C126.827 476.87 108.489 483.672 90.6734 491.852C72.3298 500.275 53.5075 507.481 33.7353 514.568C39.4005 516.913 44.5222 517.123 49.5533 517.309C75.7553 518.274 100.463 510.813 124.946 502.961C146.682 495.991 167.765 487.05 189.789 480.864C198.296 478.475 201.708 479.603 206.879 487.001C207.457 487.827 208.011 488.709 208.747 489.375C210.979 491.392 215.045 493.708 214.2 496C213.065 499.082 208.932 496.296 206.073 496.59C186.542 498.611 168.993 505.825 153.031 516.801C126.117 535.305 101.51 556.939 74.472 575.297C74.1427 575.52 74.1871 576.29 73.8997 577.426C83.8755 576.416 93.0671 574.02 102.155 571.106C124.213 564.037 143.108 551.138 162.244 538.652C179.777 527.213 196.034 513.829 214.789 504.257C217.213 503.021 219.463 500.643 222.315 503.493C229.041 510.214 235.793 516.913 243.183 524.267C241.321 524.763 240.611 524.983 239.888 525.138C219.533 529.474 201.792 538.686 185.463 551.723C163.346 569.381 144.607 590.505 123.742 609.416C115.381 616.996 107.131 624.7 98.155 632.971C102.462 633.557 105.196 632.006 107.969 631.041C137.737 620.691 163.518 603.778 186.828 582.855C204.452 567.035 221.952 551.075 239.655 535.342C247.299 528.549 247.469 528.74 254.89 535.305C256.421 536.659 257.972 537.992 259.486 539.363C266.979 546.143 274.464 552.934 282.649 560.347C269.509 563.234 257.686 566.154 246.436 571.223C210.974 587.194 182.395 610.841 163.542 645.238C159.2 653.163 156.114 661.795 155.592 671.203C157.729 671.074 158.362 669.94 159.033 668.952C164.834 660.411 172.127 653.288 180.29 647.078C215.505 620.302 252.201 595.432 285.152 565.741C286.055 564.927 286.822 563.781 288.212 564.899C296.546 571.586 304.878 578.283 314.112 585.702C281.341 593.347 257.185 611.851 235.969 634.927C223.25 648.762 210.368 662.437 196.755 675.41C190.164 681.69 183.726 688.132 177.22 694.499C187.234 693.052 195.916 688.843 204.404 684.286C227.68 671.795 246.397 653.35 266.089 636.262C282.114 622.358 296.449 606.564 313.161 593.394C315.292 591.715 317.484 588.722 320.621 590.909C328.654 596.506 336.542 602.321 344.317 608.274C345.533 609.205 346.817 611.313 343.293 611.937C325.686 615.069 310.924 623.992 297.864 635.643C275.714 655.402 261.956 680.765 251.199 707.953C247.455 717.417 243.638 726.883 242.508 737.395C243.606 736.863 243.845 735.8 244.389 734.93C258.225 712.821 274.818 692.971 293.322 674.616C311.428 656.658 330.757 639.932 347.8 620.919C351.715 616.55 354.465 614.376 360.111 618.847C367.518 624.713 375.83 629.434 384.324 635.022C379.184 637.122 375.008 638.688 370.946 640.517C350.799 649.59 337.387 665.879 324.604 683.097C307.822 705.698 293.878 730.426 274.121 750.809C273.986 750.947 274.275 751.494 274.481 752.306C284.585 748.251 294.094 743.445 302.659 736.716C323.397 720.422 340.229 700.412 356.582 680.005C366.684 667.4 377.071 655.057 387.84 643.028C389.196 641.513 390.303 638.82 393.24 640.543C403.199 646.371 413.372 651.868 423.241 658.903C418.358 661.62 414.233 663.83 410.194 666.184C370.359 689.405 341.909 722.003 327.809 766.368C324.839 775.712 323.958 785.193 326.149 795.96C327.966 792.197 328.944 789.281 330.621 786.846C341.52 771.025 352.465 755.202 365.226 740.799C386.768 716.484 409.095 692.82 426.735 665.347C428.851 662.052 430.651 662.276 433.629 663.982C441.246 668.336 449.056 672.348 456.745 676.584C458.589 677.6 461 678.168 461.43 681.206C434.143 687.367 415.851 704.888 402.682 728.434C387.673 755.265 378.236 784.453 367.717 813.165C367.66 813.323 368.154 813.687 368.9 814.524C375.496 806.67 381.864 798.771 388.566 791.162C408.307 768.749 427.337 745.831 442.253 719.779C448.651 708.607 455.869 697.94 463.406 687.501C465.829 684.146 468.242 682.157 472.867 684.798C479.589 688.63 486.781 691.636 493.767 695.008C499.719 697.883 505.66 700.777 512.682 704.183C504.785 707.35 498.027 709.472 491.841 713.04C471.775 724.606 457.96 742.273 444.982 760.722C428.532 784.108 413.969 808.809 395.976 831.125C395.242 832.035 394.18 832.885 394.524 834.344C397.068 835.17 398.749 833.338 400.598 832.234C424.033 818.255 443.718 800.204 460.419 778.589C478.034 755.796 495.089 732.532 514.479 711.145C517.195 708.152 519.298 706.472 523.786 708.463C546.902 718.723 570.402 728.053 594.351 736.211C596.702 737.012 599.037 737.655 601.528 736.866C604.219 736.014 606.48 734.499 606.99 731.636C607.449 729.068 605.318 727.607 603.508 726.311C600.158 723.916 596.33 722.446 592.5 721.008C570.916 712.906 549.329 704.813 528.099 695.794C524.727 694.359 523.058 692.485 522.539 688.732C520.448 673.579 522.417 658.547 523.959 643.576C527.22 611.964 532.852 580.606 534.038 548.766C534.367 539.946 534.986 531.135 533.116 522.196C523.533 534.406 516.55 547.894 511.876 562.395C498.143 605 495.256 647.476 516.15 689.742C512.993 689.463 511.196 689.126 509.365 688.231C499.221 683.259 489.105 678.224 478.79 673.627C475.331 672.083 474.605 670.333 474.963 666.715C476.551 650.719 481.999 635.768 486.834 620.639C494.621 596.285 502.201 571.905 498.874 545.765C496.922 530.42 494.714 515.151 486.381 500.893C485.74 502.201 485.188 502.867 485.089 503.591C480.981 533.558 472.848 562.644 465.636 591.924C459.604 616.413 455.901 640.848 466.039 665.23C465.663 665.625 465.285 666.02 464.909 666.415C457.154 662.337 449.478 658.096 441.606 654.255C437.763 652.381 436.391 649.644 436.213 645.582C435.659 632.893 436.51 620.304 438.349 607.758C442.366 580.357 448.524 553.251 449.775 525.474C450.341 512.864 449.937 500.337 444.4 487.833C440.195 503.442 436.233 518.37 432.147 533.262C426.652 553.283 419.108 572.777 416.875 593.636C415.176 609.485 415.096 625.047 423.113 639.558C423.783 640.772 424.608 642.049 423.773 644.164C416.144 639.783 408.644 635.353 401.016 631.15C397.261 629.082 396.447 626.534 396.962 622.182C400.074 595.843 406.515 570.058 409.788 543.754C412.152 524.754 412.819 505.849 406.366 487.466C403.309 478.757 399.325 470.4 392.482 462.305C391.094 468.907 393.361 474.039 392.839 479.211C391.264 494.826 390.043 510.488 388.018 526.045C383.835 558.184 381.97 590.234 389.411 622.179C389.126 622.491 388.842 622.803 388.557 623.115C378.901 618.176 370.126 611.863 361.203 605.762C358.218 603.721 357.803 601.611 358.201 598.105C360.235 580.217 365.231 562.988 369.22 545.53C375.229 519.229 378.597 492.832 369.52 466.475C366.257 457.005 363.626 447.189 357.186 438.998C355.64 440.632 355.864 442.308 355.656 443.918C352.492 468.351 350.499 492.941 345.503 517.122C342.782 530.3 340.904 543.582 339.948 557.034C339.069 569.407 341.384 581.266 344.746 593.318C341.456 593.109 339.873 591.036 337.988 589.66C318.772 575.618 321.515 582.466 324.282 558.659C327.291 532.765 333.888 507.402 336.153 481.351C337.764 462.818 339.798 444.334 335.197 425.946C334.055 421.385 333.445 416.534 329.43 412.696C328.384 418.852 327.391 424.455 326.483 430.07C322.578 454.252 314.416 477.449 309.941 501.483C305.877 523.3 303.626 545.178 312.285 566.602C312.561 567.284 312.839 568.143 311.699 568.777C308.754 568.025 306.843 565.406 304.226 563.954C294.324 558.461 294.184 557.846 295.688 546.758C299.989 515.045 303.052 483.222 303.296 451.183C303.917 432.295 305.041 413.375 299.589 394.796C295.724 414.379 288.928 433.029 283.981 452.181C274.69 481.251 266.047 510.376 276.79 541.365C269.073 535.512 262.171 529.26 254.934 523.427C251.56 520.709 250.823 517.901 251.845 513.862C255.704 498.632 262.211 484.31 266.86 469.369C271.384 454.823 277.746 440.825 280.14 425.635C284.15 404.503 282.154 383.799 276.452 363.364C275.865 363.29 275.279 363.216 274.692 363.139C268.945 384.36 263.198 405.579 257.452 426.8C248.844 453.714 236.711 479.885 241.338 510.681C237.66 507.121 235.672 504.171 232.903 502.724C226.118 499.188 226.181 493.909 227.888 487.768C231.768 473.811 235.588 459.838 239.435 445.872C241.228 440.259 243.112 434.67 244.798 429.025C251.407 406.888 254.448 384.454 250.024 361.47C247.915 350.508 245.134 339.742 240.137 329.287C237.703 331.868 238.328 334.406 238.612 336.885C241.366 360.887 236.621 383.799 228.227 406.094C223.286 419.222 218.501 432.353 216.46 446.31C210.572 458.313 214.092 470.953 214.627 483.685C207.447 479.277 204.471 474.5 207.554 466.255C209.777 460.307 210.816 453.653 210.568 447.052C210.851 446.103 211.294 445.17 211.399 444.2C214.548 415.257 214.982 386.085 218.733 357.185C220.01 347.348 222.334 337.767 224.517 328.106C192.063 362.708 187.206 404.329 193.981 448.918C194.569 454.588 196.84 459.813 198.318 465.249C198.022 465.578 197.727 465.904 197.432 466.233C192.727 461.196 188.021 456.159 183.319 451.121C179.899 440.614 182.526 430.06 183.406 419.603C185.633 393.035 192.307 367.051 194.168 340.409C195.061 327.611 197.165 314.827 192.807 302.217C192.092 300.148 191.913 297.851 189.035 297.758C188.196 301.917 187.615 305.944 186.558 309.84C180.582 331.832 174.261 353.735 168.521 375.784C164.152 392.564 160.834 409.544 165.829 426.886C165.479 427.224 165.129 427.566 164.775 427.905C162.801 426.279 161.895 424.047 161.175 421.686C149.699 384.087 128.802 352.09 102.045 323.765Z" fill="#86C18F" fill-opacity="0.1"/>
+                <path d="M355.47 290.323C343.034 289.728 330.571 290.272 318.346 293.592C325.281 295.173 332.204 296.578 338.982 298.602C358.586 304.456 377.222 313.04 396.785 319.01C410.52 323.202 424.448 325.47 438.405 320.594C444.31 318.531 449.832 318.707 455.594 320.216C455.62 320.531 455.655 320.844 455.694 321.156C436.214 327.731 423.556 342.155 412.778 358.65C405.04 370.491 397.371 382.386 390.01 394.46C386.832 399.674 382.426 404.035 379.279 409.799C382.542 409.66 384.678 408.269 386.852 407.025C406.262 395.918 421.463 380.353 434.236 362.221C442.659 350.265 450.413 337.816 460.326 326.952C462.624 324.434 465.04 322.244 468.498 321.553C474.729 322.422 480.958 323.29 487.189 324.159C487.206 324.441 487.238 324.723 487.281 324.998C476.739 331.657 466.842 339.007 460.118 349.861C452.061 362.866 445.443 376.587 439.862 390.799C434.116 405.433 427.444 419.642 420.174 434.297C424.621 432.554 427.608 429.905 430.532 427.293C445.759 413.684 455.596 396.154 465.096 378.525C473.531 362.875 480.534 346.471 489.554 331.106C493.039 325.17 495.563 323.961 502.46 325.321C503.231 325.471 504.017 325.667 504.79 325.644C507.132 325.57 510.665 324.674 511.428 326.417C512.455 328.76 508.632 329.429 507.186 331.137C497.317 342.819 491.363 356.345 488.333 371.125C483.221 396.045 481.093 421.475 475.833 446.38C475.769 446.683 476.21 447.091 476.662 447.884C481.715 441.93 485.58 435.621 489.106 429.077C497.668 413.198 501.307 395.755 505.304 378.413C508.966 362.525 510.862 346.234 516.218 330.733C516.911 328.73 516.889 326.181 520.03 326.24C527.434 326.379 534.841 326.493 542.96 326.629C542.183 327.913 541.903 328.42 541.581 328.898C532.499 342.324 527.517 357.074 525.394 373.209C522.517 395.064 523.408 417.039 521.911 438.921C521.311 447.69 520.842 456.469 520.272 465.958C523.005 463.961 523.702 461.614 524.737 459.575C535.855 437.69 541.189 414.275 542.972 389.945C544.319 371.548 545.522 353.14 546.961 334.75C547.582 326.81 547.781 326.825 555.491 326.502C557.082 326.435 558.672 326.345 560.262 326.297C568.129 326.056 575.997 325.824 584.594 325.565C578.778 334.281 573.72 342.305 570.144 351.226C558.866 379.34 555.598 408.045 563.593 437.531C565.436 444.323 568.366 450.835 573.153 456.397C574.283 455.17 574.026 454.192 573.869 453.275C572.512 445.348 572.758 437.412 573.986 429.519C579.289 395.474 586.453 361.699 588.912 327.24C588.979 326.296 588.79 325.239 590.175 325.115C598.463 324.368 606.756 323.626 615.945 322.803C601.682 344.791 598.118 368.222 598.672 392.63C599.005 407.264 599.161 421.895 598.527 436.528C598.22 443.612 598.085 450.703 597.873 457.791C602.711 451.571 605.311 444.52 607.613 437.378C613.931 417.798 614.474 397.338 616.298 377.113C617.783 360.656 617.298 344.05 619.565 327.634C619.854 325.541 619.468 322.677 622.41 322.21C629.94 321.014 637.508 320.017 645.087 319.159C646.272 319.025 648.131 319.514 646.49 321.768C638.3 333.034 634.834 346.014 633.796 359.606C632.036 382.658 638.011 404.322 646.657 425.39C649.667 432.723 652.637 440.097 657.679 446.607C658.008 445.716 657.568 444.99 657.404 444.208C653.229 424.327 651.822 404.226 652.294 383.932C652.758 364.075 654.573 344.25 653.87 324.375C653.708 319.809 654.077 317.103 659.66 316.564C666.985 315.856 674.2 314.016 681.984 312.566C680.234 316.52 678.736 319.654 677.444 322.874C671.037 338.847 672.306 355.231 674.431 371.798C677.217 393.545 682.746 414.953 682.665 437.062C682.664 437.213 683.122 437.364 683.676 437.708C687.157 429.976 689.898 422.144 691.071 413.741C693.91 393.397 692.551 373.077 690.708 352.793C689.57 340.263 688.734 327.726 688.281 315.16C688.224 313.577 687.391 311.468 689.97 310.849C698.707 308.742 707.384 306.333 716.722 304.951C715.449 309.114 714.328 312.581 713.332 316.084C703.516 350.628 705.153 384.287 721.2 416.801C724.579 423.649 729.204 429.446 736.249 434.306C735.236 431.212 734.21 429.047 733.837 426.775C731.409 412.01 729.007 397.218 728.391 382.244C727.349 356.964 727.1 331.626 722.164 306.681C721.571 303.689 722.703 302.843 725.295 302.191C731.922 300.522 738.471 298.555 745.074 296.781C746.658 296.355 748.318 295.372 750.2 296.844C738.213 315.039 737.409 334.75 742.734 355.077C748.8 378.241 759.267 399.718 768.869 421.513C768.922 421.632 769.396 421.569 770.267 421.637C769.728 413.667 769.035 405.794 768.688 397.904C767.663 374.665 765.966 351.526 760.268 328.849C757.825 319.124 756.116 309.24 754.708 299.31C754.256 296.119 754.537 293.7 758.558 292.684C764.4 291.205 770.06 289.008 775.801 287.127C780.694 285.526 785.592 283.942 791.372 282.062C788.65 288.104 786.004 292.944 784.459 298.288C779.444 315.615 781.231 332.991 783.911 350.354C787.308 372.362 792.475 394.09 794.428 416.331C794.507 417.238 794.371 418.289 795.351 418.922C797.225 418.011 797.179 416.075 797.621 414.457C803.224 393.956 804.524 373.195 802.224 352.045C799.8 329.739 796.808 307.473 796.141 284.998C796.049 281.852 796.322 279.773 799.916 278.467C818.43 271.741 836.657 264.287 854.504 255.931C856.255 255.112 857.913 254.211 858.885 252.423C859.936 250.492 860.386 248.421 859.126 246.538C857.997 244.849 856.012 245.18 854.296 245.43C851.123 245.895 848.181 247.138 845.254 248.399C828.765 255.508 812.28 262.624 795.494 269.028C792.827 270.043 790.878 269.893 788.56 268.067C779.203 260.691 772.19 251.192 764.971 241.957C749.729 222.455 735.955 201.814 719.426 183.304C714.847 178.176 710.437 172.897 704.559 168.891C705.775 180.918 709.14 192.259 714.348 202.921C729.65 234.249 750.968 259.647 785.52 272.084C783.598 273.632 782.407 274.414 780.896 274.9C772.518 277.588 764.121 280.226 755.85 283.216C753.075 284.218 751.722 283.627 749.969 281.403C742.221 271.568 737.205 260.235 731.749 249.134C722.967 231.26 714.054 213.484 698.07 200.61C688.687 193.052 679.202 185.675 666.826 182.173C667.172 183.254 667.222 183.925 667.558 184.385C681.436 203.423 692.579 224.138 704.344 244.466C714.184 261.467 725.301 277.181 744.159 285.389C744.161 285.814 744.162 286.24 744.164 286.665C737.61 288.564 731.012 290.329 724.519 292.425C721.351 293.449 719.102 292.653 716.809 290.469C709.645 283.648 703.324 276.122 697.581 268.088C685.038 250.541 673.855 232.002 659.556 215.738C653.064 208.355 646.072 201.543 636.212 197.516C642.282 208.547 648.12 219.064 653.869 229.629C661.597 243.833 667.891 258.847 677.903 271.759C685.508 281.572 693.868 290.349 706.203 294.164C707.235 294.483 708.388 294.755 709.062 296.392C702.414 298.054 695.812 299.617 689.261 301.378C686.037 302.245 684.204 301.255 682.143 298.534C669.665 282.072 659.355 264.122 646.986 247.592C638.053 235.652 628.218 224.682 614.668 217.85C608.249 214.613 601.5 212.074 593.288 211.226C596.075 215.681 600.118 217.338 602.619 220.522C610.167 230.136 617.94 239.585 625.205 249.41C640.214 269.706 656.475 288.701 677.904 302.61C677.913 302.939 677.921 303.268 677.93 303.597C669.843 306.04 661.509 307.235 653.207 308.63C650.429 309.097 649.057 308.137 647.387 305.954C638.868 294.817 632.367 282.45 625.178 270.497C614.346 252.491 601.981 235.857 582.653 225.967C575.708 222.415 568.93 218.327 560.892 217.207C560.907 218.959 561.938 219.779 562.691 220.795C574.11 236.216 586.271 251.093 596.526 267.362C602.115 276.228 608.235 284.696 614.963 292.762C621.151 300.181 628.855 305.585 637.251 310.534C635.291 312.193 633.283 311.884 631.482 312.131C613.114 314.627 618.352 316.989 607.048 302.134C594.753 285.977 584.758 268.179 571.961 252.336C562.856 241.065 554.016 229.592 541.503 221.757C538.399 219.814 535.437 217.421 531.111 217.436C533.848 221.455 536.317 225.136 538.84 228.778C549.707 244.458 557.654 261.885 568.122 277.79C577.623 292.229 588.175 305.723 604.605 313.071C605.127 313.304 605.748 313.637 605.45 314.608C603.392 315.776 600.904 315.338 598.651 315.936C590.128 318.201 589.717 317.932 584.573 310.897C569.86 290.776 554.394 271.262 537.228 253.149C527.377 242.213 517.79 230.988 504.696 223.505C513.103 236.583 519.361 250.72 526.927 264.14C537.412 285.472 548.29 306.486 571.054 318.076C563.563 318.958 556.313 319.177 549.101 319.812C545.74 320.109 543.81 318.931 542.202 316.112C536.143 305.48 532.06 293.929 526.601 283.033C521.284 272.426 517.296 261.134 510.435 251.316C501.274 237.29 488.973 226.749 474.737 218.36C474.367 218.635 473.998 218.91 473.627 219.184C481.863 234.197 490.096 249.209 498.332 264.223C508.035 283.976 515.36 305.216 534.587 320.001C530.601 319.989 527.892 319.407 525.556 320.091C519.839 321.77 517.023 318.773 514.665 314.405C509.305 304.477 503.903 294.572 498.52 284.656C496.495 280.537 494.534 276.383 492.431 272.305C484.186 256.312 473.777 242.079 458.882 231.569C451.778 226.556 444.403 222.015 435.952 218.847C435.981 221.609 437.702 222.696 439.2 223.934C453.708 235.917 463.418 251.339 470.748 268.384C475.064 278.421 479.471 288.374 485.862 297.31C489.04 307.225 497.842 312.418 505.017 319.275C498.607 320.679 494.357 319.605 491.635 313.313C489.67 308.774 486.66 304.478 482.956 300.908C482.603 300.222 482.347 299.459 481.882 298.858C468.019 280.914 452.508 264.307 439.006 246.063C434.41 239.852 430.541 233.22 426.548 226.619C427.021 263.565 446.772 289.547 474.655 310.913C478.047 313.777 482.143 315.484 485.908 317.736C485.92 318.08 485.93 318.423 485.942 318.767C480.581 318.481 475.22 318.195 469.861 317.907C462.267 313.857 458.042 306.515 452.888 300.171C439.791 284.058 429.503 265.871 416.16 249.914C409.75 242.249 404.027 233.938 394.771 229.215C393.252 228.44 391.912 227.247 390.246 228.749C392.021 231.536 393.87 234.11 395.38 236.867C403.903 252.437 412.184 268.143 420.871 283.618C427.481 295.394 434.788 306.716 446.957 313.751C446.943 314.13 446.931 314.511 446.916 314.892C444.93 315.045 443.215 314.282 441.537 313.346C414.791 298.442 385.783 291.77 355.47 290.323Z" fill="#86C18F" fill-opacity="0.06"/>
+            </svg>                                             
+        </section>
+    
+            
+
+        <script>
+            $(function(){
+                $('.music').mouseover(function(){
+                    $(this).parent().find('.navbar').css('top', '-10%');
+                })
+
+                $('.book').mouseover(function(){
+                    $(this).parent().find('.navbar').css('top', '20%');
+                })
+
+                $('.breath').mouseover(function(){
+                    $(this).parent().find('.navbar').css('top', '50%');
+                })
+
+                $('.chart').mouseover(function(){
+                    $(this).parent().find('.navbar').css('top', '80%');
+                })
+            });
+
+            
+        </script>
+    </body>
+</html>

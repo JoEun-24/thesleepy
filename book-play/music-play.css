@@ -1,0 +1,161 @@
+body{
+    overflow: hidden;
+}
+.text_tittle{
+    display:block;
+    /* width: 100px; /* 정렬하려는 요소의 넓이를 반드시 지정 */ 
+    /* margin: 0 auto;  */
+    text-align: center;
+
+}
+.text_tittle h1{
+    font-size:24px;
+    margin-top: 120px; /* 문자들의 가운데 정렬을 해제 */ 
+    /* width: 500px; 
+    margin: 0 auto;
+    text-align: center; */
+
+    /* margin-right: auto;
+    margin-left: auto; */
+}
+.text_tittle h2{
+    font-size:16px;
+    margin-top: 15px;
+    /* width: 500px;  */
+    /* margin: 0 auto; */
+    /* text-align: center; */
+    /* margin-right: auto;
+    margin-left: auto; */
+}
+
+
+/* 리스트 부분 */
+.wra{
+    display: flex;
+  height: 400px;
+  /* border: 1px solid black; */
+  justify-content: center;
+  align-items: center;
+  margin-right: 60px;
+}
+.item{
+    flex-direction: row;
+    width:165px;
+    height: 300px;
+
+    transition: all 0.5s ease-in-out;
+}
+#music_list{
+    display: flex;
+    /* border: 1px solid #000; */
+    /* width: 790px; */
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(0 , -50%);
+    /* line-height: 100px; */
+    
+
+    margin-top: 0px;
+}
+#example_item {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.item_row{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+}
+
+.item_row .item-img:not(:last-child){
+    margin-right:40px;
+}
+
+
+.item > .item-img{
+    width: 165px;
+    height: 230px;
+    display: flex;
+    vertical-align: middle;
+    background-image: url('./musics/00.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 8px;
+  
+}
+
+.item > .item-title{
+    display: flex;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+/* 플레이어부분 */
+#player{
+    /* border: 1px solid #000; */
+    position:absolute;
+    top: 72vh;
+    left: 50vw;
+    transform: translate(-50% , -50%);
+}
+
+#player > .player-img{
+    
+    width:0px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url('./musics/00.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+#player a:not(:last-child){
+    margin-right: 38px;
+    
+}
+
+.player-btn{
+    display: flex;
+
+    align-items: center;
+}
+
+#pause{
+    position: relative;
+    width: 32px;
+    height: 40px;
+}
+
+#pause svg{
+    position: absolute;
+}
+
+.stop-btn{
+    display: none;
+    padding: 0 6px;
+}
+
+#player > .player-progress{
+    width: 330px;
+    height: 10px;
+    border-radius: 14px;
+    border: 1px solid #E5EAD5;
+    background-color: #E5EAD5;
+    margin-top: 35px;
+    /* position: absolute;
+    top: 75vh;
+    left: 50vw;
+    transform: translate(-50% , -50%); */
+}
+
+#player > .player-progress > div{
+    height: 10px;
+    background-color: #86C18F;
+    border-radius: 14px;
+}
